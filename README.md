@@ -14,22 +14,18 @@
 
 ### ターゲットユーザ
 
-災害対策をしている人で情報を発信し共有したい人
-仕事や趣味、過去の経験から防災に役立ちそうなアイデアを持っている人
-対策を考えていて参考にする情報を探している人
+災害対策をしている人で情報を発信し共有したい人  仕事や趣味、過去の経験から防災に役立ちそうなアイデアを持っている人  対策を考えていて参考にする情報を探している人
 
 ### 主な利用シーン
 
-防災のアイデアの探しているとき
-会社で取り組んでいる防災対策について発信、共有する
-実際に避難するときに役立った荷物を共有
+防災のアイデアの探しているとき  会社で取り組んでいる防災対策について発信、共有する  実際に避難するときに役立った荷物を共有
 
 ## 設計書
 
-- 機能一覧 https://docs.google.com/spreadsheets/d/1iSXhKgPfIyTGX10oUY1L3Iv4NX-8TL81JHa5PazV8os/edit#gid=0
-- ER 図 https://drive.google.com/file/d/1Uq4k3ZQCV4y3frLHZpbwOPfGFk6ZiOJq/view?usp=sharing
-- テーブル定義書 https://docs.google.com/spreadsheets/d/1hWpXJea85_G9sclJriuDlaBHGsIxARk9Cm91lgaijKA/edit?usp=sharing
-- アプリケーション詳細設計 https://docs.google.com/spreadsheets/d/1dLFnHPOgMNoNPQvHCIP1IrCa3aQ_ZkS7szHHrcdM7Hw/edit?usp=sharing
+- 機能一覧  https://docs.google.com/spreadsheets/d/1iSXhKgPfIyTGX10oUY1L3Iv4NX-8TL81JHa5PazV8os/edit#gid=0
+- ER図  https://drive.google.com/file/d/1Uq4k3ZQCV4y3frLHZpbwOPfGFk6ZiOJq/view?usp=sharing
+- テーブル定義書  https://docs.google.com/spreadsheets/d/1hWpXJea85_G9sclJriuDlaBHGsIxARk9Cm91lgaijKA/edit?usp=sharing
+- アプリケーション詳細設計  https://docs.google.com/spreadsheets/d/1dLFnHPOgMNoNPQvHCIP1IrCa3aQ_ZkS7szHHrcdM7Hw/edit?usp=sharing
 
 ## チャレンジ要素一覧
 
