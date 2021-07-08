@@ -3,6 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-         
-  enum sex: {未入力: 0, 男性: 1, 女性: 2}
+
+  enum sex: { 未入力: 0, 男性: 1, 女性: 2 }
+  attachment :image
 end
