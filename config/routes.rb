@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   resources :homes, only: [:about]
   resources :users, only: [:index, :edit, :show, :update]
   resources :posts
-  resources :items, only: [:index, :new, :update, :destroy]
-  resources :shelters, only: [:new, :update, :destroy]
+  resources :items, only: [:index, :create, :update, :destroy]
+  resources :shelters, only: [:create, :update, :destroy]
 end
