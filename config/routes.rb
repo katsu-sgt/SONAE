@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :homes, only: [:about]
   resources :users, only: [:index, :edit, :show, :update]
-  resources :posts
+  resources :posts do
+    resources :post_comments, only: [:create, :destroy]
+  end
   resources :items, only: [:index, :create, :update, :destroy]
   resources :shelters, only: [:create, :update, :destroy]
 end

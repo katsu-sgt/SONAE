@@ -9,12 +9,11 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
   validates :name, presence: true
   validates :sex, presence: true
-  
+
   has_many :posts, dependent: :destroy
   has_many :favorites, dependent: :destroy
   has_many :bookmarks, dependent: :destroy
   has_many :items, dependent: :destroy
   has_many :shelters, dependent: :destroy
   has_many :post_comments, dependent: :destroy
-  
 end
