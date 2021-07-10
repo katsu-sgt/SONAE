@@ -1,0 +1,33 @@
+<div class="row">
+    <div class="col-lg-10 d-flex">
+      <!--ユーザープロフィール画像-->
+      <div class="mr-3">
+        <%= link_to (attachment_image_tag user, :image, size: '100x100', fallback: "avatar.jpg"), user_path(user.id) %>
+      </div>
+      <!--ユーザー情報-->
+      <div class="d-inline">
+        <p class="m-0"><%= user.name %></p>
+        <p class="m-0"><%= user.age %></p>
+        <p class="m-0"><%= user.sex %></p>
+        <p class="m-0"><%= user.job %></p>
+      </div>
+      <!--ユーザー自己紹介文-->
+      <div class="profile ml-5 outline">
+        <%= user.profile%>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-1">
+    <div class="col-lg-10 d-flex">
+      <!--投稿数-->
+      <div class="col-lg-2">
+        <p>投稿数<%= user.posts.count%></p>
+      </div>
+      <!--current_userならユーザ編集ボタンを表示-->
+      <% if user == current_user %>
+          <div>
+            <%= link_to "編集", edit_user_path(current_user.id), class: "btn btn-outline btn-success" %>
+          </div>
+      <% end %>
+    </div>
+  </div>

@@ -10,7 +10,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_07_120059) do
+ActiveRecord::Schema.define(version: 2021_07_09_082850) do
+
+  create_table "items", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "item_name", null: false
+    t.integer "number", default: 1, null: false
+    t.date "replacement"
+    t.string "item_memo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "post_comments", force: :cascade do |t|
+    t.integer "post_id", null: false
+    t.integer "user_id", null: false
+    t.text "comment", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "title", null: false
+    t.string "post_image_id"
+    t.text "content", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "shelters", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "shelter_name", null: false
+    t.string "address", null: false
+    t.string "shelter_memo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
