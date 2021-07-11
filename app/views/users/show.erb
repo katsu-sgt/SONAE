@@ -1,4 +1,23 @@
 <div class="container">
-  <h1>ユーザー詳細</h1>
+  <% if @user.id == current_user.id %>
+    <h1>マイページ</h1>
+  <% else %>
+    <h1>ユーザー詳細</h1>
+  <% end %>
+  <% if @user.id == current_user.id %>
+    <div class="row my-3">
+      <div class="col-lg-6 mx-auto d-flex">
+        <div class="mr-2">
+            <%= link_to "ブックマーク一覧", root_path, class: "btn btn-outline-secondary" %>
+          </div>
+          <div class="mr-2">
+            <%= link_to "マイリスト", items_path, class: "btn btn-outline-secondary" %>
+          </div>
+          <div class="mr-2">
+            <%= link_to "プロフィールを編集", edit_user_path(current_user.id), class: "btn btn-outline-secondary" %>
+          </div>
+      </div>
+    </div>
+  <%  end %>
   <%= render 'users/user_card', user: @user %>
 </div>

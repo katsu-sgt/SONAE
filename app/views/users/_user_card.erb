@@ -6,13 +6,13 @@
       </div>
       <!--ユーザー情報-->
       <div class="d-inline">
-        <p class="m-0"><%= user.name %></p>
-        <p class="m-0"><%= user.age %></p>
-        <p class="m-0"><%= user.sex %></p>
-        <p class="m-0"><%= user.job %></p>
+        <p class="m-0">名前：<%= user.name %></p>
+        <p class="m-0">年齢：<%= user.age %></p>
+        <p class="m-0">性別：<%= user.sex %></p>
+        <p class="m-0">職業：<%= user.job %></p>
       </div>
       <!--ユーザー自己紹介文-->
-      <div class="profile ml-5 outline">
+      <div class="profile ml-5">
         <%= user.profile%>
       </div>
     </div>
@@ -23,11 +23,5 @@
       <div class="col-lg-2">
         <p>投稿数<%= user.posts.count%></p>
       </div>
-      <!--current_userならユーザ編集ボタンを表示-->
-      <% if user == current_user %>
-          <div>
-            <%= link_to "編集", edit_user_path(current_user.id), class: "btn btn-outline btn-success" %>
-          </div>
-      <% end %>
     </div>
   </div>

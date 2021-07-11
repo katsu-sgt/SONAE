@@ -23,8 +23,8 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ml-auto">
               <% if user_signed_in? %>
-                <li class="nav-item"><%= link_to (attachment_image_tag current_user, :image, size: '50x50', fallback: "avatar.jpg"), user_path(current_user.id) %></li>
-                <li class="nav-item"><%= link_to "投稿", new_post_path, class: "btn btn-outline-secondary mr-3" %></li>
+                <li class="nav-item mr-2"><%= link_to (attachment_image_tag current_user, :image, size: '50x50', fallback: "avatar.jpg"), user_path(current_user.id) %></li>
+                <li class="nav-item"><%= link_to "投稿する", new_post_path, class: "btn btn-outline-secondary mr-3" %></li>
                 <li class="nav-item"><%= link_to "ユーザー一覧", users_path, class: "btn btn-outline-secondary mr-3" %></li>
                 <li class="nav-item"><%= link_to "投稿一覧", posts_path, class: "btn btn-outline-secondary mr-3" %></li>
                 <li class="nav-item"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-outline-secondary mr-3" %></li>
@@ -33,7 +33,7 @@
                 <li class="nav-item"><%= link_to "投稿一覧", posts_path, class: "btn btn-outline-secondary mr-3" %></li>
                 <li class="nav-item"><%= link_to "新規登録", new_user_registration_path, class: "btn btn-outline-secondary mr-3" %></li>
                 <li class="nav-item"><%= link_to "ログイン", new_user_session_path, class: "btn btn-outline-secondary mr-3" %></li>
-                <li class="nav-item"><%= link_to "ゲストログイン", new_user_session_path, class: "btn btn-outline-secondary mr-3" %></li>
+                <li class="nav-item"><%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post, class: "btn btn-outline-secondary mr-3" %></li>
               <% end %>
             </ul>
             </ul>
