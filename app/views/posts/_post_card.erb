@@ -1,0 +1,32 @@
+<div class="row">
+  <% @posts.each do |post| %>
+    <!--カード-->
+    <div class="card mt-3">
+      <div class="row g-0">
+        <div class="col-md-3">
+          <%= attachment_image_tag post, :post_image, fallback: "noimage.jpg", class: "img-fluid max-width: 100%; , height: auto;" %>
+        </div>
+        <div class="col-md-6">
+          <div class="card-body">
+            <%= link_to post_path(post) do %>
+              <h5 class="card-title"><%= post.title %></h5>
+            <% end %>
+          </div>
+        </div>
+        <div class="col-md-3 d-flex">
+          <div class="pt-3">
+            <%= link_to user_path(post.user) do %>
+              <%= attachment_image_tag(post.user, :image, size: '70x70', fallback: "avatar.jpg") %>
+            <% end %>
+          </div>
+          <div class="ml-3 p-3">
+            <p class="m-0">投稿者:<%= post.user.name %></p>
+            <p class="m-0">年齢:<%= post.user.age %></p>
+            <p class="m-0">性別:<%= post.user.sex %></p>
+            <p class="m-0">職業:<%= post.user.job %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

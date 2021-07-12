@@ -1,32 +1,6 @@
 <div class="container">
   <h1>ユーザー一覧</h1>
-  <div class="row">
-    <div>
-      <%= @users.each do |user| %>
-        <div class="user">
-          <div>
-            <%= attachment_image_tag user, :image, fill, 100, 100, 'jpeg', fallback: 'avatar.jpg' %>
-          </div>
-          <div>
-            <%= user.name %>
-            <%= user.age %>
-            <%= user.job %>
-          </div>
-          <div>
-            <%= user.profile %>
-          </div>
-          <div>
-            <!--ユーザーの投稿数-->
-          </div>
-        </div>
-      <% end %>
-      
-    </div>
-    
-    
-    
-    
-    
-  </div>
-  
+  <% @users.each do |user| %>
+    <%= render 'users/user_card', user: user %>
+  <% end %>
 </div>
