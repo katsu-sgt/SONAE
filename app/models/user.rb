@@ -11,8 +11,6 @@ class User < ApplicationRecord
   validates :sex, presence: true
 
   has_many :posts, dependent: :destroy
-  has_many :favorites, dependent: :destroy
-  has_many :bookmarks, dependent: :destroy
   has_many :items, dependent: :destroy
   has_many :shelters, dependent: :destroy
   has_many :post_comments, dependent: :destroy
@@ -22,6 +20,8 @@ class User < ApplicationRecord
     find_or_create_by!(email: 'guest@example.com') do |user|
       user.password = SecureRandom.urlsafe_base64
       user.name = "ゲスト"
+      user.job = "会社員"
+      user.profile = "ゲストです。防災対策の参考にします。"
     end
   end
 end
