@@ -11,6 +11,14 @@
             <%= link_to post_path(post) do %>
               <h5 class="card-title"><%= post.title %></h5>
             <% end %>
+            <div>
+              <span>
+                タグ：
+                <% post.tags.each do |tag| %>
+                  <%= tag.tag_name %>
+                <% end %>
+              </span>
+            </div>
           </div>
         </div>
         <div class="col-md-3 d-flex">

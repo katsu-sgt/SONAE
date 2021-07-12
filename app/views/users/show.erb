@@ -1,10 +1,10 @@
 <div class="container">
-  <% if @user.id == current_user.id %>
+  <% if user_signed_in? && @user.id == current_user.id %>
     <h1>マイページ</h1>
   <% else %>
     <h1>ユーザー詳細</h1>
   <% end %>
-  <% if @user.id == current_user.id %>
+  <% if  user_signed_in? && @user.id == current_user.id %>
     <div class="row my-3">
       <div class="col-lg-6 mx-auto d-flex">
         <div class="mr-2">
@@ -20,4 +20,9 @@
     </div>
   <%  end %>
   <%= render 'users/user_card', user: @user %>
+  <div class="row">
+    <h1><%= @user.name%>の投稿一覧</h1>
+      <!--投稿カード-->
+      <%= render 'posts/index', posts: @posts %>
+  </div>
 </div>
