@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :posts do
     resources :post_comments, only: [:create, :destroy]
   end
-  
+
   resources :items, only: [:index, :create, :update, :destroy]
   resources :shelters, only: [:create, :update, :destroy]
 end

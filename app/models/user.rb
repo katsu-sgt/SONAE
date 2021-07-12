@@ -14,7 +14,7 @@ class User < ApplicationRecord
   has_many :items, dependent: :destroy
   has_many :shelters, dependent: :destroy
   has_many :post_comments, dependent: :destroy
-  
+
   # ゲストログイン機能のためのメソッド
   def self.guest
     find_or_create_by!(email: 'guest@example.com') do |user|
