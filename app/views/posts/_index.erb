@@ -3,9 +3,11 @@
     <!--カード-->
     <div class="card mt-3">
       <div class="row g-0">
+        <!--画像部分-->
         <div class="col-md-3">
           <%= attachment_image_tag post, :post_image, fallback: "noimage.jpg", class: "img-fluid max-width: 100%; , height: auto;" %>
         </div>
+        <!--投稿内容部分-->
         <div class="col-md-6">
           <div class="card-body">
             <%= link_to post_path(post) do %>
@@ -19,11 +21,19 @@
                 <% end %>
               </span>
             </div>
-            <div class="favorite-btn-<%= post.id %>">
-              <%= render 'favorites/favorite-btn', post: post %>
+            <!--いいねボタン-->
+            <div class="d-flex">
+              <div class="favorite-btn-<%= post.id %>">
+                <%= render 'favorites/favorite-btn', post: post %>
+              </div>
+              <!--ブックマークボタン-->
+              <div class="bookmark-btn-<%= post.id %>">
+                <%= render 'bookmarks/bookmark-btn', post: post %>
+              </div>
             </div>
           </div>
         </div>
+        <!--投稿者情報部分-->
         <div class="col-md-3 d-flex">
           <div class="pt-3">
             <%= link_to user_path(post.user) do %>

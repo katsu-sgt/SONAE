@@ -17,6 +17,10 @@ class UsersController < ApplicationController
     user.update(user_params)
     redirect_to user_path(user)
   end
+  
+  def bookmarks
+    @user = current_user
+  end
 
   private
 
