@@ -15,6 +15,16 @@
     </span>
   </div>
   <div class="row mt-3">
+    <!--いいねボタン-->
+    <div class="favorite-btn-<%= @post.id %>">
+      <%= render 'favorites/favorite-btn', post: @post %>
+    </div>
+    <!--ブックマークボタン-->
+    <div class="bookmark-btn-<%= @post.id %>">
+      <%= render 'bookmarks/bookmark-btn', post: @post %>
+    </div>
+  </div>
+  <div class="row mt-3">
     <%= attachment_image_tag @post, :post_image, fallback: "noimage.jpg", size: "400x250" %>
   </div>
   <div class="row mt-3">

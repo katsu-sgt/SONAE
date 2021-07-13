@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
+
   def index
     @posts = Post.all
   end
@@ -6,7 +8,7 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
   end
-
+  # タグも同時に作成出来るメソッド
   def create
     @post = Post.new(post_params)
     tag_list = params[:post][:tag_ids].split(',')
