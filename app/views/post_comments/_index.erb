@@ -1,0 +1,19 @@
+<span>コメント数:<%= post.post_comments.count %></span>
+<% post.post_comments.each do |post_comment| %>
+  <div class="row border">
+    <div class="col-lg-1">
+      <div class= mt-1>
+        <%= link_to attachment_image_tag(post_comment.user, :image, size: '60x60', fallback: "avatar.jpg"), user_path(post_comment.user.id) %>
+      </div>
+    </div>
+    <div class="col-lg-9">
+      <p class="m-1"><%= post_comment.user.name%> | <%= post_comment.created_at.strftime('%Y.%m.%d') %></p>
+      <p class="text-break"><%= post_comment.comment %></p>
+    </div>
+    <% if user_signed_in? && post_comment.user.id == current_user.id %>
+      <div class="col-lg-1 ml-auto align-self-center">
+        <%= link_to "削除", post_post_comment_path(post_comment.post_id, post_comment.id), method: :delete, remote: true, class: "btn btn-sm btn-danger" %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

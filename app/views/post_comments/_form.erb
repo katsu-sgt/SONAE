@@ -1,0 +1,10 @@
+<%= form_with( model: [ post, post_comment ] ) do |f| %>
+  <div class="row mb-3">
+    <div class="col-lg-8">
+      <%= f.text_area :comment, placeholder: "コメントを入力する", class: "form-control" %>
+    </div>
+    <div class="col-lg-2">
+      <%= f.submit "コメント", class: "mt-4 btn btn-success btn-sm" %>
+    </div>
+  </div>
+<% end %>
