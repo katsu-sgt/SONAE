@@ -30,6 +30,10 @@
               <div class="bookmark-btn-<%= post.id %>">
                 <%= render 'bookmarks/bookmark-btn', post: post %>
               </div>
+              <!--コメント数-->
+              <div>
+                <span>コメント数<%= post.post_comments.count %></span>
+              </div>
             </div>
           </div>
         </div>

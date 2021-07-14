@@ -1,7 +1,7 @@
 <div class="container">
   <h1>投稿ユーザー</h1>
   <%= render 'users/user_card', user: @post.user %>
-  
+
   <h1>投稿詳細</h1>
   <div class="row mt-3">
     <h2><%= @post.title %></h2>
@@ -36,5 +36,11 @@
         <%= link_to "編集", edit_post_path(@post), class: "btn btn-outline-success" %>
       </div>
     <% end %>
+  </div>
+  <!--コメント作成欄-->
+  <%= render "post_comments/form", post: @post, post_comment: @post_comment %>
+  <!--コメント一覧-->
+  <div id="comments">
+    <%= render "post_comments/index", post: @post %>
   </div>
 </div>
