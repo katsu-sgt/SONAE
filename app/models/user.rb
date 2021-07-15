@@ -28,4 +28,9 @@ class User < ApplicationRecord
       user.profile = "ゲストです。防災対策の参考にします。"
     end
   end
+
+  # 検索
+  def self.search_for(content)
+    User.where('name Like ?', '%' + content + '%')
+  end
 end
