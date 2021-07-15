@@ -1,0 +1,26 @@
+<div class="container">
+  <h1>item編集</h1>
+  <div class="row">
+    <%= form_with model: @item, local: true do |f| %>
+      <div class="field">
+        <%= f.label :品名 %><br />
+        <%= f.text_field :item_name, size: "100x1" %>
+      </div>
+      <div class="field">
+      <%= f.label :個数 %><br />
+      <%= f.number_field :number, min: 0, max: 100 %>
+    </div>
+      <div class="field">
+        <%= f.label :交換時期 %><br />
+        <%= f.date_field :replacement %>
+      </div>
+      <div class="field">
+        <%= f.label :メモ %><br />
+        <%= f.text_field :item_memo, size: "100x1" %>
+      </div>
+      <div class="mt-3">
+        <%= f.submit "編集" %>
+      </div>
+    <% end %>
+  </div>
+</div>

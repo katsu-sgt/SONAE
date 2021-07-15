@@ -16,6 +16,6 @@ Rails.application.routes.draw do
     resource :bookmarks, only: [:create, :destroy]
   end
 
-  resources :items, only: [:index, :create, :update, :destroy]
-  resources :shelters, only: [:create, :update, :destroy]
+  resources :items, only: [:index, :create, :edit, :update, :destroy]
+  resources :shelters, only: [:create, :index, :edit, :update, :destroy]
 end
