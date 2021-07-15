@@ -57,7 +57,7 @@ class ItemsController < ApplicationController
           item.item_name,
           item.number,
           item.replacement,
-          item.item_memo
+          item.item_memo,
         ]
         csv << column_values
       end

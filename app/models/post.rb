@@ -10,7 +10,7 @@ class Post < ApplicationRecord
   has_many :post_tags, dependent: :destroy
   has_many :tags, through: :post_tags
 
-# タグ作成
+ # タグ作成
   def save_tags(savepost_tags)
     current_tags = self.tags.pluck(:tag_name) unless self.tags.nil?
     old_tags = current_tags - savepost_tags
@@ -24,7 +24,7 @@ class Post < ApplicationRecord
       self.tags << post_tag
     end
   end
-  
+
   # いいねしているか判断
   def favorited_by?(user)
     favorites.where(user_id: user.id).exists?
@@ -32,5 +32,10 @@ class Post < ApplicationRecord
   # ブックマークしているか判断
   def bookmarked?(user)
     bookmarks.where(user_id: user.id).exists?
+  end
+
+  # 検索
+  def self.search_for(content)
+    Post.where(["title like ? OR content like?", "%#{content}%", "%#{content}%"])
   end
 end
