@@ -13,7 +13,6 @@ class ItemsController < ApplicationController
       format.html
       format.csv do |csv|
         send_items_csv(@items)
-        send_shelters_csv(@shelters)
       end
     end
   end
