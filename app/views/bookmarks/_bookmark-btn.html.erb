@@ -1,0 +1,9 @@
+<% if user_signed_in? && post.bookmarked?(current_user) %>
+  <%= link_to post_bookmarks_path(post), method: :delete, remote: true do %>
+    <span class="fas fa-bookmark text-success"></span>
+  <% end %>
+<% else %>
+  <%= link_to post_bookmarks_path(post), method: :post, remote: true do %>
+    <span class="far fa-bookmark text-body"></span>
+  <% end %>
+<% end %>

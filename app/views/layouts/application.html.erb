@@ -4,12 +4,53 @@
     <title>Sonae</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light mt-1 mb-5 p-2">
+        <div class="container-fluid d-flex">
+          <div>
+            <%= link_to "SONAE", about_path, class: "navbar-brand" %>
+          </div>
+          <div>
+            <%= render "layouts/search" %>
+          </div>
+          <!--ナビゲーションボタン　画面縮小時はハンバーガーメニュー-->
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ml-auto">
+              <% if user_signed_in? %>
+                <li class="nav-item mr-2"><%= link_to (attachment_image_tag current_user, :image, size: '50x50', fallback: "avatar.jpg"), user_path(current_user.id) %></li>
+                <li class="nav-item"><%= link_to "投稿する", new_post_path, class: "btn btn-outline-secondary mr-3" %></li>
+                <li class="nav-item"><%= link_to "ユーザー一覧", users_path, class: "btn btn-outline-secondary mr-3" %></li>
+                <li class="nav-item"><%= link_to "投稿一覧", posts_path, class: "btn btn-outline-secondary mr-3" %></li>
+                <li class="nav-item"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-outline-secondary mr-3" %></li>
+              <% else %>
+                <li class="nav-item"><%= link_to "ユーザー一覧", users_path, class: "btn btn-outline-secondary mr-3" %></li>
+                <li class="nav-item"><%= link_to "投稿一覧", posts_path, class: "btn btn-outline-secondary mr-3" %></li>
+                <li class="nav-item"><%= link_to "新規登録", new_user_registration_path, class: "btn btn-outline-secondary mr-3" %></li>
+                <li class="nav-item"><%= link_to "ログイン", new_user_session_path, class: "btn btn-outline-secondary mr-3" %></li>
+                <li class="nav-item"><%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post, class: "btn btn-outline-secondary mr-3" %></li>
+              <% end %>
+            </ul>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <%= yield %>
+    </main>
+    <footer class="fotter bg-light mt-5">
+      <div class="container">
+        <p class="text-center p-3">SONAE</p>
+      </div>
+    </footer>
   </body>
 </html>

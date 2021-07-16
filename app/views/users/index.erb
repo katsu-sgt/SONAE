@@ -1,0 +1,6 @@
+<div class="container">
+  <h1>ユーザー一覧</h1>
+  <% @users.each do |user| %>
+    <%= render 'users/user_card', user: user %>
+  <% end %>
+</div>

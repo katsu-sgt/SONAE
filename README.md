@@ -6,7 +6,9 @@
 
 ### サイトテーマ
 
-防災ｘ SNS
+防災ｘ SNS</br>
+防災をテーマにしたsnsサイトです。防災対策や過去の経験や知識、役に立ちそうなアイデアを共有、発信する事ができます。</br>
+投稿を参考に、リスト（備品、避難所）を作成し、ダウンロードして管理できます。
 
 ### テーマを選んだ理由
 
@@ -26,6 +28,8 @@
 - ER図  https://drive.google.com/file/d/1Uq4k3ZQCV4y3frLHZpbwOPfGFk6ZiOJq/view?usp=sharing
 - テーブル定義書  https://docs.google.com/spreadsheets/d/1hWpXJea85_G9sclJriuDlaBHGsIxARk9Cm91lgaijKA/edit?usp=sharing
 - アプリケーション詳細設計  https://docs.google.com/spreadsheets/d/1dLFnHPOgMNoNPQvHCIP1IrCa3aQ_ZkS7szHHrcdM7Hw/edit?usp=sharing
+- 画面遷移図　https://drive.google.com/file/d/1SuMIMxMxMO1dAW3H91gllIbMsUT-vvwM/view?usp=sharing
+- ワイヤーフレーム　https://drive.google.com/file/d/1tmZxFcyHoJ-Ln_Z-AHLDy0LlaOfxP2Rh/view?usp=sharing
 
 ## チャレンジ要素一覧
 
