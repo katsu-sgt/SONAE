@@ -1,5 +1,7 @@
 <div class="container">
-  <h1>検索結果一覧</h1>
+  <div class="row title">
+    <h3 class="mx-auto">検索結果</h3>
+  </div>
     <!--検索結果一覧-->
     <% if @model == 'post'%>
       <%= render 'posts/index', posts: @records %>

@@ -1,14 +1,14 @@
 <div class="row">
   <% posts.each do |post| %>
     <!--カード-->
-    <div class="card mt-3">
-      <div class="row g-0">
+    <div class="card m-3">
+      <div class="row ">
         <!--画像部分-->
         <div class="col-md-3">
-          <%= attachment_image_tag post, :post_image, fallback: "noimage.jpg", class: "img-fluid max-width: 100%; , height: auto;" %>
+          <%= attachment_image_tag post, :post_image, fallback: "noimage.jpg", class: "card-img-top img-fluid" %>
         </div>
         <!--投稿内容部分-->
-        <div class="col-md-6">
+        <div class="col-md-5">
           <div class="card-body">
             <%= link_to post_path(post) do %>
               <h5 class="card-title"><%= post.title %></h5>
@@ -38,7 +38,7 @@
           </div>
         </div>
         <!--投稿者情報部分-->
-        <div class="col-md-3 d-flex">
+        <div class="col-md-4 d-flex">
           <div class="pt-3">
             <%= link_to user_path(post.user) do %>
               <%= attachment_image_tag(post.user, :image, size: '70x70', fallback: "avatar.jpg") %>
