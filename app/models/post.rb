@@ -39,6 +39,6 @@ class Post < ApplicationRecord
 
   # 検索
   def self.search_for(content)
-    Post.where(["title like ? OR content like?", "%#{content}%", "%#{content}%"])
+    Post.joins(:tags).where(["title like ? OR content like? OR tag_name like?", "%#{content}%", "%#{content}%", "%#{content}%"])
   end
 end

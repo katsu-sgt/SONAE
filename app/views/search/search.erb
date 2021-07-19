@@ -5,9 +5,11 @@
     <!--検索結果一覧-->
     <% if @model == 'post'%>
       <%= render 'posts/index', posts: @records %>
-    <% else %>
+    <% elsif @model == 'user' %>
       <% @records.each do |user| %>
         <%= render 'users/user_card', user: user %>
       <% end %>
+    <%else%>
+      <%= render 'posts/index', posts: @records %>
     <% end %>
 </div>
