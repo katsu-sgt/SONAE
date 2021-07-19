@@ -1,38 +1,39 @@
 <div class="container">
-  <div class="row">
+  <div class="row title">
     <h3 class="mx-auto">新規登録</h3>
   </div>
   <%= form_with model: @user, url: user_registration_path, id: "new_user", class: "new_user", local: true do |f| %>
+  <div class="p-3">
     <%= render "devise/shared/error_messages", resource: resource %>
 
     <div class="field">
       <%= f.label :メールアドレス %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
     </div>
 
     <div class="field">
       <%= f.label :ユーザー名 %><br />
-      <%= f.text_field :name, autocomplete: "username" %>
+      <%= f.text_field :name, autocomplete: "username", class: "form-control" %>
     </div>
 
     <div class="field">
       <%= f.label :年齢 %><br />
-      <%= f.number_field :age, min: 0, max: 100 %>
+      <%= f.number_field :age, min: 0, max: 100, class: "form-select" %>
     </div>
 
     <div class="field">
       <%= f.label :性別 %><br />
-      <%= f.select :sex, User.sexes.keys.map {|k| [k, k]} %>
+      <%= f.select :sex, User.sexes.keys.map {|k| [k, k]}, class: "form-control" %>
     </div>
 
     <div class="field">
       <%= f.label :職業 %><br />
-      <%= f.text_field :job %>
+      <%= f.text_field :job, class: "form-control" %>
     </div>
 
     <div class="field">
       <%= f.label :自己紹介 %><br />
-      <%= f.text_area :profile, size: "50x4" %>
+      <%= f.text_area :profile, class: "form-control" %>
     </div>
 
     <div class="field">
@@ -45,20 +46,21 @@
       <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> 文字以上入力してください)</em>
       <% end %><br />
-      <%= f.password_field :password, autocomplete: "new-password" %>
+      <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
     </div>
 
     <div class="field">
       <%= f.label :パスワード（確認） %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
     </div>
 
     <div class="actions mt-1">
-      <%= f.submit "新規登録" %>
+      <%= f.submit "新規登録", class: "btn btn-outline-dark" %>
     </div>
+  </div>
   <% end %>
   <div class="mt-3">
-    <span>登録済みの方はこちらから</span>
+    <span>登録済みの方はこちら</span>
     <%= link_to "ログイン", new_user_session_path, class: "btn btn-outline-success" %>
   </div>
 </div>

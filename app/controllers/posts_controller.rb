@@ -17,6 +17,8 @@ class PostsController < ApplicationController
       @post.save_tags(tag_list)
       flash[:sucess] = "投稿しました"
       redirect_to post_path(@post)
+    else
+      render 'new'
     end
   end
 
@@ -37,6 +39,8 @@ class PostsController < ApplicationController
       @post.save_tags(tag_list)
       flash[:success] = '投稿を編集しました‼'
       redirect_to post_path(@post)
+    else
+      render 'edit'
     end
   end
 

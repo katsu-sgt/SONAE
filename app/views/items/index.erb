@@ -2,78 +2,78 @@
   <%= render "items/new", item: @item %>
   <%= render "shelters/new", shelter: @shelter %>
   <!--csv出力ボタン-->
+  <div class="row title">
+    <h3 class="mx-auto">物品リスト</h3>
+  </div>
   <div class="row">
-    <div class="d-flex">
-      <h1 class="mt-5">物品リスト</h1>
-      <div class="mt-5">
-        <%= link_to "物品リストをダウンロード", items_path(format: :csv), class: "btn btn-primary"%>
-      </div>
+    <div class="p-3">
+      <%= link_to "物品リストをダウンロード", items_path(format: :csv), class: "btn btn-outline-success"%>
     </div>
   </div>
-  <!--物品リスト一覧-->
-  <div class="row">
-   <table class="table">
-     <thead>
-       <tr>
-         <th>品名</th>
-         <th>個数</th>
-         <th>交換時期</th>
-         <th>メモ</th>
-         <th></th>
-       </tr>
-      </thead>
-      <% @items.each do |item| %>
-      <tbody>
-        <tr>
-          <td><%= item.item_name %></td>
-          <td><%= item.number %></td>
-          <td><%= item.replacement %></td>
-          <td><%= item.item_memo %></td>
-          <td>
-            <div class="text-right">
-              <%= link_to "編集", edit_item_path(item), class: "btn btn-sm btn-outline-success" %>
-              <%= link_to "削除", item_path(item), method: :delete, class: "btn btn-sm btn-outline-danger" %>
-            </div>
-          </td>
-        </tr>
-      </tbody>
-      <% end %>
-   </table>
-  </div>
+  
+<!--物品リスト一覧-->
+  <table class="table p-3">
+   <thead>
+     <tr>
+       <th scope="col">品名</th>
+       <th scope="col">個数</th>
+       <th scope="col">交換時期</th>
+       <th scope="col">メモ</th>
+       <th scope="col"></th>
+     </tr>
+    </thead>
+    <% @items.each do |item| %>
+    <tbody>
+      <tr>
+        <td scope="row"><%= item.item_name %></td>
+        <td><%= item.number %></td>
+        <td><%= item.replacement %></td>
+        <td><%= item.item_memo %></td>
+        <td>
+          <div class="text-right">
+            <%= link_to "編集", edit_item_path(item), class: "btn btn-sm btn-outline-secondary" %>
+            <%= link_to "削除", item_path(item), method: :delete, class: "btn btn-sm btn-outline-danger" %>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+    <% end %>
+  </table>
+   
   <!--避難所リスト一覧-->
-  <div class="row">
-    <div class="d-flex">
-      <h1>避難所リスト</h1>
-      <div>
-        <%= render "shelters/index" %>
-      </div>
+  <div class="row title">
+    <h3 class="mx-auto">避難所リスト</h3>
+  </div>
+  
+  <div class="row ">
+    <div class="p-3">
+      <%= render "shelters/index" %>
     </div>
   </div>
-  <div class="row">
-   <table class="table">
-     <thead>
-       <tr>
-         <th>名称</th>
-         <th>住所</th>
-         <th>メモ</th>
-         <th></th>
-       </tr>
-      </thead>
-      <% @shelters.each do |shelter| %>
-      <tbody>
-        <tr>
-          <td><%= shelter.shelter_name %></td>
-          <td><%= shelter.address %></td>
-          <td><%= shelter.shelter_memo %></td>
-          <td>
-            <div class="text-right">
-              <%= link_to "編集", edit_shelter_path(shelter), class: "btn btn-sm btn-outline-success" %>
-              <%= link_to "削除", shelter_path(shelter), method: :delete, class: "btn btn-sm btn-outline-danger" %>
-            </div>
-          </td>
-        </tr>
-      </tbody>
-      <% end %>
-   </table>
-  </div>
+  
+  <table class="table p-3">
+   <thead>
+     <tr>
+       <th scope="col">名称</th>
+       <th scope="col">住所</th>
+       <th scope="col">メモ</th>
+       <th scope="col"></th>
+     </tr>
+    </thead>
+    <% @shelters.each do |shelter| %>
+    <tbody>
+      <tr>
+        <td scope="row"><%= shelter.shelter_name %></td>
+        <td><%= shelter.address %></td>
+        <td><%=safe_join(shelter.shelter_memo.split("\n"),tag(:br)) %></td>
+        <td>
+          <div class="text-right">
+            <%= link_to "編集", edit_shelter_path(shelter), class: "btn btn-sm btn-outline-secondary" %>
+            <%= link_to "削除", shelter_path(shelter), method: :delete, class: "btn btn-sm btn-outline-danger" %>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+    <% end %>
+  </table>
 </div>
