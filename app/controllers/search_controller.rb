@@ -9,5 +9,4 @@ class SearchController < ApplicationController
       @records = Post.search_for(@content)
     end
   end
-
 end
