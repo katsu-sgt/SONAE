@@ -12,7 +12,7 @@
     </div>
     <% if user_signed_in? && post_comment.user.id == current_user.id %>
       <div class="col-lg-1 ml-auto align-self-center">
-        <%= link_to "削除", post_post_comment_path(post_comment.post_id, post_comment.id), method: :delete, remote: true, class: "btn btn-sm btn-danger" %>
+        <%= link_to "削除", post_post_comment_path(post_comment.post_id, post_comment.id), method: :delete, class: "btn btn-sm btn-outline-danger", remote: true  %>
       </div>
     <% end %>
   </div>

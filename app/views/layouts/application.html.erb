@@ -9,12 +9,14 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="bg-light">
     <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light mt-1 mb-5 p-2">
+      <nav class="navbar navbar-expand-lg navbar-light bg-secondary mb-3 p-2">
         <div class="container-fluid d-flex">
           <div>
-            <%= link_to "SONAE", about_path, class: "navbar-brand" %>
+            <%= link_to about_path, class: "navbar-brand" do %>
+              <%= image_tag "logo.jpg", size: "100x60" %>
+            <% end %>
           </div>
           <div>
             <%= render "layouts/search" %>
@@ -26,19 +28,18 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ml-auto">
               <% if user_signed_in? %>
-                <li class="nav-item mr-2"><%= link_to (attachment_image_tag current_user, :image, size: '50x50', fallback: "avatar.jpg"), user_path(current_user.id) %></li>
-                <li class="nav-item"><%= link_to "投稿する", new_post_path, class: "btn btn-outline-secondary mr-3" %></li>
-                <li class="nav-item"><%= link_to "ユーザー一覧", users_path, class: "btn btn-outline-secondary mr-3" %></li>
-                <li class="nav-item"><%= link_to "投稿一覧", posts_path, class: "btn btn-outline-secondary mr-3" %></li>
-                <li class="nav-item"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn btn-outline-secondary mr-3" %></li>
+                <li class="nav-item mr-2"><%= link_to (attachment_image_tag current_user, :image, size: '50x50', fallback: "avatar.jpg", class: "rounded-circle border  border-secondary"), user_path(current_user.id) %></li>
+                <li class="nav-item mr-3 d-flex align-items-center"><%= link_to "投稿する", new_post_path, class: "text-white" %></li>
+                <li class="nav-item mr-3 d-flex align-items-center"><%= link_to "ユーザー", users_path, class: "text-white" %></li>
+                <li class="nav-item mr-3 d-flex align-items-center"><%= link_to "投稿一覧", posts_path, class: "text-white" %></li>
+                <li class="nav-item mr-3 d-flex align-items-center"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "text-white" %></li>
               <% else %>
-                <li class="nav-item"><%= link_to "ユーザー一覧", users_path, class: "btn btn-outline-secondary mr-3" %></li>
-                <li class="nav-item"><%= link_to "投稿一覧", posts_path, class: "btn btn-outline-secondary mr-3" %></li>
-                <li class="nav-item"><%= link_to "新規登録", new_user_registration_path, class: "btn btn-outline-secondary mr-3" %></li>
-                <li class="nav-item"><%= link_to "ログイン", new_user_session_path, class: "btn btn-outline-secondary mr-3" %></li>
-                <li class="nav-item"><%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post, class: "btn btn-outline-secondary mr-3" %></li>
+                <li class="nav-item mr-3 d-flex align-items-center"><%= link_to "ユーザー", users_path, class: "text-white" %></li>
+                <li class="nav-item mr-3 d-flex align-items-center"><%= link_to "投稿一覧", posts_path, class: "text-white" %></li>
+                <li class="nav-item mr-3 d-flex align-items-center"><%= link_to "新規登録", new_user_registration_path, class: "text-white" %></li>
+                <li class="nav-item mr-3 d-flex align-items-center"><%= link_to "ログイン", new_user_session_path, class: "text-white" %></li>
+                <li class="nav-item mr-3 d-flex align-items-center"><%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post, class: "text-white" %></li>
               <% end %>
-            </ul>
             </ul>
           </div>
         </div>
@@ -47,9 +48,9 @@
     <main>
       <%= yield %>
     </main>
-    <footer class="fotter bg-light mt-5">
+    <footer class="fotter bg-secondary mt-5">
       <div class="container">
-        <p class="text-center p-3">SONAE</p>
+        <p class="text-center text-white p-3 m-0">SONAE</p>
       </div>
     </footer>
   </body>

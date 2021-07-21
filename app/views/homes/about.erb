@@ -1,1 +1,91 @@
-About
+<div class="container">
+  <div class="row title">
+    <h3 class="mx-auto">災害に備える</h3>
+  </div>
+
+  <%= render "homes/slide"%>
+
+  <div class="row border">
+    <div class="col-sm-6  p-3">
+      <p class="pt-5">みなさんは災害への備えはしていますか？
+      日本は周囲を海に囲われ、山地や急勾配の川が多い地理的特性や、近年の気候変動の影響などにより
+      自然災害の影響を受けやすい国と言えます。
+      </p>
+    </div>
+    <div class="col-sm-6">
+      <%= image_tag 'japan.jpg', class: "img-fluid p-5" %>
+    </div>
+  </div>
+
+  <div class="row border mt-2">
+    <div class="col-sm-6">
+      <%= image_tag 'koumuin.png', class: "img-fluid p-5" %>
+    </div>
+    <div class="col-sm-6  p-3">
+      <p class="pt-5">防災に関する考え方として
+      「自助」「共助」「公助」という考え方があります。
+      しかし「公助」にも限界はあり、災害が大規模になるほど
+      救助や救援が遅れる可能性もあります。
+      </p>
+    </div>
+  </div>
+
+  <div class="row border mt-2">
+    <div class="col-sm-6  p-3">
+      <p class="pt-5">自分の身は自分で守り、地域で助け合う。
+      この「自助」「共助」が特に大切になると思います。
+      自分に出来る事は何があるのか？
+      そんな事を考えるきっかけの場になれば幸いです
+      </p>
+    </div>
+    <div class="col-sm-6">
+      <%= image_tag 'map_family.png', class: "img-fluid p-5" %>
+    </div>
+  </div>
+  
+  <div class="row title mt-3">
+    <h3 class="mx-auto">SONAEとは</h3>
+  </div>
+  
+  <div class="row border mt-2">
+    <div class="col-sm-6">
+      <%= image_tag 'posts.png', class: "img-fluid p-5" %>
+    </div>
+    <div class="col-sm-6  p-3">
+      <p class="pt-5"><strong>探してみよう</strong><br>
+      実際に対策をしている人の意見や、実際あった経験など、自分が対策をする際のヒントとなるものが、
+      あるかもしれません。
+      実際に準備している持出し袋の紹介や、過去の経験、仕事や趣味で得た知識、使えそうなアイデアなど、
+      誰かの投稿が役に立つかもしれません。
+      </p>
+    </div>
+  </div>
+  
+ <div class="row border mt-2">
+    <div class="col-sm-6  p-3">
+      <p class="pt-5"><strong>考えてみよう</strong><br>
+      非常持出し袋の中身や、備蓄する非常食などを管理するため、記録に残したり、
+      もしものとき避難する場合の場所などを調べておいて、記録してみましょう。
+      実際に書き出してみると、何か気づきがあるかもしれません。
+      </p>
+    </div>
+    <div class="col-sm-6">
+      <%= image_tag 'lists.png', class: "img-fluid p-5" %>
+    </div>
+  </div>
+  
+  <div class="row border mt-2">
+    <div class="col-sm-6">
+      <%= image_tag 'toukou.png', class: "img-fluid p-5" %>
+    </div>
+    <div class="col-sm-6  p-3">
+      <p class="pt-5"><strong>投稿してみよう</strong><br>
+      実際に準備している持出し袋の紹介や、過去の経験、仕事や趣味で得た知識、使えそうなアイデアなど、
+      あなたの投稿が誰かの役に立つかもしれません。会員登録することで、すべての機能が使えます。
+      </p>
+    </div>
+  </div>
+  
+  <div class="row mt-5 p-3">
+    <%= link_to "SONAEを使う", posts_path, class: "btn btn-outline-success col-sm-6 mx-auto" %>
+  </div>

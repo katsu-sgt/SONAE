@@ -1,12 +1,24 @@
 <div class="container">
-  <h1>投稿ユーザー</h1>
+  <div class="row title">
+    <h3 class="mx-auto">投稿ユーザー</h3>
+  </div>
   <%= render 'users/user_card', user: @post.user %>
 
-  <h1>投稿詳細</h1>
-  <div class="row mt-3">
-    <h2><%= @post.title %></h2>
+  <div class="row title">
+    <h3 class="mx-auto">投稿詳細</h3>
   </div>
-  <div class="row mt-3">
+  <div class="row m-3">
+    <h2 class="mx-auto"><%= @post.title %></h2>
+  </div>
+  <!--ユーザーが投稿者なら編集ボタンを表示-->
+  <div class="row">
+    <% if  user_signed_in? && @post.user.id == current_user.id %>
+      <div class="col-lg-2 ml-auto">
+        <%= link_to "編集", edit_post_path(@post), class: "btn btn-outline-secondary" %>
+      </div>
+    <% end %>
+  </div>
+  <div class="row m-3">
     <span>
       タグ：
       <% @post.tags.each do |tag| %>
@@ -14,9 +26,9 @@
       <% end %>
     </span>
   </div>
-  <div class="row mt-3">
+  <div class="row m-3">
     <!--いいねボタン-->
-    <div class="favorite-btn-<%= @post.id %>">
+    <div class="favorite-btn-<%= @post.id %> mr-2">
       <%= render 'favorites/favorite-btn', post: @post %>
     </div>
     <!--ブックマークボタン-->
@@ -24,19 +36,15 @@
       <%= render 'bookmarks/bookmark-btn', post: @post %>
     </div>
   </div>
-  <div class="row mt-3">
-    <%= attachment_image_tag @post, :post_image, fallback: "noimage.jpg", size: "400x250" %>
+  <!--投稿画像-->
+  <div class="row m-3">
+    <%= attachment_image_tag @post, :post_image, fallback: "noimage.jpg", class: "col-lg-6 mx-auto post-img" %>
   </div>
-  <div class="row mt-3">
-    <p><%= @post.content %></p>
+  <!--投稿本文-->
+  <div class="row m-3 pt-4">
+    <p class="mx-auto text-break"><%=safe_join(@post.content.split("\n"),tag(:br))%></p>
   </div>
-  <div class="row">
-    <% if  user_signed_in? && @post.user.id == current_user.id %>
-      <div class="col-lg-2 ml-auto">
-        <%= link_to "編集", edit_post_path(@post), class: "btn btn-outline-success" %>
-      </div>
-    <% end %>
-  </div>
+
   <!--コメント作成欄-->
   <%= render "post_comments/form", post: @post, post_comment: @post_comment %>
   <!--コメント一覧-->

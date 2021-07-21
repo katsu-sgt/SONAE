@@ -16,3 +16,58 @@
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+
+.card-img-top {
+    width: 100%;
+    height: 20vh;
+    object-fit: cover;
+}
+
+.post-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+h3 {
+    background: linear-gradient(transparent 80%, #fd7e00 50%);
+    color: white;
+}
+h4 {
+    // background: linear-gradient(transparent 80%, #fd7e00 50%);
+    color: white;
+}
+
+.title {
+    background-color: black;
+    margin-bottom: 20px;
+}
+
+.field {
+    margin-bottom: 10px;
+}
+
+.fas {
+    font-size: 20px;
+}
+
+.far {
+    font-size: 20px;
+}
+
+// skipper
+#box{
+  height: 300px;
+}
+.image1 {
+  background-image: url(image1.jpg);
+}
+.image2 {
+  background-image: url(image2.jpg);
+}
+.image3 {
+  background-image: url(image3.jpg);
+}
+.image4 {
+  background-image: url(image4.jpg);
+}
