@@ -1,26 +1,38 @@
 <div class="container">
-  <h1>item編集</h1>
-  <div class="row">
-    <%= form_with model: @item, local: true do |f| %>
-      <div class="field">
-        <%= f.label :品名 %><br />
-        <%= f.text_field :item_name, size: "100x1" %>
-      </div>
-      <div class="field">
-      <%= f.label :個数 %><br />
-      <%= f.number_field :number, min: 0, max: 100 %>
-    </div>
-      <div class="field">
-        <%= f.label :交換時期 %><br />
-        <%= f.date_field :replacement %>
-      </div>
-      <div class="field">
-        <%= f.label :メモ %><br />
-        <%= f.text_field :item_memo, size: "100x1" %>
-      </div>
-      <div class="mt-3">
-        <%= f.submit "編集" %>
-      </div>
-    <% end %>
+  <div class="row title">
+    <h3 class="mx-auto">物品リスト編集</h3>
   </div>
+  <%= form_with model: @item, local: true do |f| %>
+  <table class="table p-3">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">入力欄</th></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">品名</th>
+        <td><%= f.text_field :item_name, class: "form-control" %></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th scope="row">個数</th>
+        <td><%= f.number_field :number, min: 1, max: 100, class: "form-select" %></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th scope="row">交換日時</th>
+        <td><%= f.date_field :replacement, class: "form-control" %></td>
+        <td></td>
+      </tr>
+      <tr>
+        <th scope="row">メモ</th>
+        <td><%= f.text_area :item_memo, class: "form-control" %></td>
+        <td><%= f.submit "送信", class: "btn btn-outline-secondary" %></td>
+      </tr>
+    </tbody>
+  </table>
+  <% end %>
 </div>
