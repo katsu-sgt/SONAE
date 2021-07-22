@@ -10,13 +10,13 @@
   <% end %>
   <% if  user_signed_in? && @user.id == current_user.id %>
     <div class="row m-3">
-      <div class="mx-auto mr-2">
+      <div class="mx-auto mr-2 pt-2">
         <%= link_to "ブックマーク", user_bookmarks_path(current_user.id), class: "btn btn-outline-secondary" %>
       </div>
-      <div class="mx-auto mr-2">
+      <div class="mx-auto mr-2 pt-2">
         <%= link_to "マイリスト", items_path, class: "btn btn-outline-secondary" %>
       </div>
-      <div class="mx-auto mr-2">
+      <div class="mx-auto pt-2">
         <%= link_to "プロフィール", edit_user_path(current_user.id), class: "btn btn-outline-secondary" %>
       </div>
     </div>

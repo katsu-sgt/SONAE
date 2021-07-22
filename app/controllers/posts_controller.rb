@@ -2,13 +2,14 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @posts = Post.all
+    @posts = Post.page(params[:page]).reverse_order
   end
 
   def new
     @post = Post.new
   end
-  # タグも同時に作成出来るメソッド
+
+  # タグを同時に作成する処理を含む
   def create
     @post = Post.new(post_params)
     tag_list = params[:post][:tag_ids].split(',')

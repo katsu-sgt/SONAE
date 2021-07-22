@@ -9,5 +9,6 @@
       <% @records.each do |user| %>
         <%= render 'users/user_card', user: user %>
       <% end %>
+      <%= paginate @records %>
     <% end %>
 </div>

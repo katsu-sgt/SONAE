@@ -1,11 +1,12 @@
 class UsersController < ApplicationController
   def index
-    @users = User.all
+    @users = User.page(params[:page]).reverse_order
   end
 
   def show
     @user = User.find(params[:id])
     @posts = @user.posts
+    @posts = @posts.page(params[:page]).reverse_order
   end
 
   def edit
@@ -13,13 +14,18 @@ class UsersController < ApplicationController
   end
 
   def update
-    user = User.find(params[:id])
-    user.update(user_params)
-    redirect_to user_path(user)
+    @user = User.find(params[:id])
+    if @user.update(user_params)
+      redirect_to user_path(user)
+    else 
+      render 'edit'
+    end
   end
-  
+
   def bookmarks
     @user = current_user
+    @bookmarked_posts = @user.bookmarked_posts
+    @bookmarked_posts = @bookmarked_posts.page(params[:page])
   end
 
   private
