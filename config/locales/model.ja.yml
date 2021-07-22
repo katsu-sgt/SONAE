@@ -1,0 +1,9 @@
+ja:
+  activerecord:
+    models:
+      post: 投稿
+    # model毎に定義したいattributesを記述
+    attributes:
+      post:
+        title: タイトル
+        content: 本文

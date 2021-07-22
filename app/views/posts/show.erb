@@ -46,7 +46,9 @@
   </div>
 
   <!--コメント作成欄-->
-  <%= render "post_comments/form", post: @post, post_comment: @post_comment %>
+  <% if  user_signed_in? %>
+    <%= render "post_comments/form", post: @post, post_comment: @post_comment %>
+  <% end %>
   <!--コメント一覧-->
   <div id="comments">
     <%= render "post_comments/index", post: @post %>
