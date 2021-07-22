@@ -33,7 +33,7 @@
               </div>
               <!--コメント数-->
               <div class="ml-2">
-                <span>コメント数：<%= post.post_comments.count %></span>
+                <span class="far fa-comment"> <%= post.post_comments.count %></span>
               </div>
             </div>
           </div>
@@ -46,13 +46,16 @@
             <% end %>
           </div>
           <div class="ml-3 p-3">
-            <p class="m-0">投稿者:<%= post.user.name %></p>
-            <p class="m-0">年齢:<%= post.user.age %></p>
-            <p class="m-0">性別:<%= post.user.sex %></p>
-            <p class="m-0">職業:<%= post.user.job %></p>
+            <p class="m-0">名前: <%= post.user.name %></p>
+            <p class="m-0">年齢: <%= post.user.age %></p>
+            <p class="m-0">性別: <%= post.user.sex %></p>
+            <p class="m-0">職業: <%= post.user.job %></p>
           </div>
         </div>
       </div>
     </div>
   <% end %>
+  <div class="mx-auto mt-3">
+    <%= paginate posts %>
+  </div>
 </div>

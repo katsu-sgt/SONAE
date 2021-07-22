@@ -1,4 +1,4 @@
-<span>コメント数:<%= post.post_comments.count %></span>
+<span class="far fa-comment"> <%= post.post_comments.count %></span>
 <% post.post_comments.each do |post_comment| %>
   <div class="row border">
     <div class="col-lg-1">

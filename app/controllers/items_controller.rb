@@ -46,7 +46,7 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:item_name, :number, :replacement, :item_memo)
   end
 
-  #品目csv出力
+  # 品目csv出力
   def send_items_csv(items)
     csv_data = CSV.generate do |csv|
       column_names = %w(品名 個数 交換時期 メモ)
