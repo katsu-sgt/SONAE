@@ -34,7 +34,7 @@
     </div>
     <!--退会ボタンを表示-->
     <div class="mt-3">
-      <%= link_to "退会する", user_registration_path, method: :delete, class: "btn btn-outline-danger" %>
+      <%= link_to "退会する", user_registration_path, method: :delete, class: "btn btn-outline-danger", data: {confirm: "本当に退会しますか？"} %>
     </div>
   </div>
   <% end %>
