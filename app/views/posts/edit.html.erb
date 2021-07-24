@@ -25,4 +25,7 @@
     </div>
   </div>
   <% end %>
+  <div class="mt-3 row">
+    <%= link_to "投稿を削除", post_path, method: :delete, class: "btn btn-outline-danger mx-auto", data: {confirm: "本当に削除しますか？"} %>
+  </div>
 </div>
