@@ -10,7 +10,7 @@
       <%= link_to "物品リストをダウンロード", items_path(format: :csv), class: "btn btn-outline-success"%>
     </div>
   </div>
-  
+ 
 <!--物品リスト一覧-->
   <table class="table p-3">
    <thead>
@@ -25,10 +25,10 @@
     <% @items.each do |item| %>
     <tbody>
       <tr>
-        <td scope="row"><%= item.item_name %></td>
+        <td scope="row" class="text-break"><%= item.item_name %></td>
         <td><%= item.number %></td>
         <td><%= item.replacement %></td>
-        <td><%= item.item_memo %></td>
+        <td class="text-break"><%=safe_join(item.item_memo.split("\n"),tag(:br)) %></td>
         <td>
           <div class="text-right">
             <%= link_to "編集", edit_item_path(item), class: "btn btn-sm btn-outline-secondary" %>
@@ -39,7 +39,7 @@
     </tbody>
     <% end %>
   </table>
-   
+
   <!--避難所リスト一覧-->
   <div class="row title">
     <h3 class="mx-auto">避難所リスト</h3>
