@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
 
   def index
     @items = current_user.items
-    @shelters = Shelter.all
+    @shelters = current_user.shelters
     @item = Item.new
     @shelter = Shelter.new
 
@@ -26,6 +26,11 @@ class ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:id])
+    if @item.user_id == current_user.id
+      render 'edit'
+    else
+      redirect_to posts_path
+    end
   end
 
   def update
