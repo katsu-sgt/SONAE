@@ -1,10 +1,10 @@
 <div class="container">
   <%= render "items/new", item: @item %>
   <%= render "shelters/new", shelter: @shelter %>
-  <!--csv出力ボタン-->
   <div class="row title">
     <h3 class="mx-auto">物品リスト</h3>
   </div>
+  <!--物品リストcsvダウンロードボタン-->
   <div class="row">
     <div class="p-3">
       <%= link_to "物品リストをダウンロード", items_path(format: :csv), class: "btn btn-outline-success"%>
@@ -44,7 +44,7 @@
   <div class="row title">
     <h3 class="mx-auto">避難所リスト</h3>
   </div>
-  
+  <!--避難所リストダウンロードボタン-->
   <div class="row ">
     <div class="p-3">
       <%= render "shelters/index" %>
