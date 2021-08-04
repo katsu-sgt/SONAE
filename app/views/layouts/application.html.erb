@@ -47,7 +47,8 @@
       </nav>
     </header>
     <main>
-      <%= render 'layouts/notifications' %>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
       <%= yield %>
     </main>
     <footer class="fotter bg-secondary mt-5">
