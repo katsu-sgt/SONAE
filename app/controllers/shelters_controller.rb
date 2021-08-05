@@ -21,6 +21,11 @@ class SheltersController < ApplicationController
 
   def edit
     @shelter = Shelter.find(params[:id])
+    if @shelter.user_id == current_user.id
+      render 'edit'
+    else
+      redirect_to posts_path
+    end
   end
 
   def update
