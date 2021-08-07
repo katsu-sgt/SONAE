@@ -41,7 +41,8 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     tag_list = params[:post][:tag_ids].split(',')
-    if @post.update(post_params)
+    if @post.user_id == current_user.id
+      @post.update(post_params)
       @post.save_tags(tag_list)
       flash[:notice] = '投稿を編集しました'
       redirect_to post_path(@post)
