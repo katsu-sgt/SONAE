@@ -6,25 +6,28 @@
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">入力欄</th></th>
-      <th scope="col"></th>
+      <th scope="col">入力欄</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th scope="row">名称</th>
       <td><%= f.text_field :shelter_name, class: "form-control" %></td>
-      <td></td>
     </tr>
     <tr>
       <th scope="row">住所</th>
       <td><%= f.text_field :address, class: "form-control" %></td>
-      <td></td>
     </tr>
     <tr>
       <th scope="row">メモ</th>
       <td><%= f.text_area :shelter_memo, class: "form-control" %></td>
-      <td><%= f.submit "送信", class: "btn btn-outline-secondary" %></td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <div class="text-center">
+          <%= f.submit "  送 信  ", class: "btn btn-outline-secondary" %>
+        </div>
+      </td>
     </tr>
   </tbody>
 </table>
