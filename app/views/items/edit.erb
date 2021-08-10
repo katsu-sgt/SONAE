@@ -30,9 +30,15 @@
       <tr>
         <th scope="row">メモ</th>
         <td><%= f.text_area :item_memo, class: "form-control" %></td>
-        <td><%= f.submit "送信", class: "btn btn-outline-secondary" %></td>
       </tr>
     </tbody>
+    <tr>
+      <td colspan="2">
+        <div class="text-center">
+          <%= f.submit " 送 信 ", class: "btn btn-outline-secondary" %>
+        </div>
+      </td>
+    </tr>
   </table>
   <% end %>
 </div>
