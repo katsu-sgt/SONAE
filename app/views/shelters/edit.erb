@@ -6,24 +6,21 @@
   <table class="table">
     <thead>
       <tr>
-        <th scope="col">#</th>
-        <th scope="col">入力欄</th></th>
-        <th scope="col"></th>
+        <th scope="col" class="col-3 text-center">#</th>
+        <th scope="col" class="col-9">入力欄</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <th scope="row">名称</th>
+        <th scope="row" class="text-center">名称</th>
         <td><%= f.text_field :shelter_name, class: "form-control" %></td>
-        <td></td>
       </tr>
       <tr>
-        <th scope="row">住所</th>
+        <th scope="row" class="text-center">住所</th>
         <td><%= f.text_field :address, class: "form-control" %></td>
-        <td></td>
       </tr>
       <tr>
-        <th scope="row">メモ</th>
+        <th scope="row" class="text-center">メモ</th>
         <td><%= f.text_area :shelter_memo, class: "form-control" %></td>
       </tr>
       <tr>

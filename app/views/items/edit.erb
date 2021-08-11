@@ -6,29 +6,25 @@
   <table class="table p-3">
     <thead>
       <tr>
-        <th scope="col">#</th>
-        <th scope="col">入力欄</th></th>
-        <th scope="col"></th>
+        <th scope="col" class="col-4 text-center">#</th>
+        <th scope="col" class="col-8">入力欄</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <th scope="row">品名</th>
+        <th scope="row" class="text-center">品名</th>
         <td><%= f.text_field :item_name, class: "form-control" %></td>
-        <td></td>
       </tr>
       <tr>
-        <th scope="row">個数</th>
+        <th scope="row" class="text-center">個数</th>
         <td><%= f.number_field :number, min: 1, max: 100, class: "form-select" %></td>
-        <td></td>
       </tr>
       <tr>
-        <th scope="row">交換日時</th>
+        <th scope="row" class="text-center">交換日</th>
         <td><%= f.date_field :replacement, class: "form-control" %></td>
-        <td></td>
       </tr>
       <tr>
-        <th scope="row">メモ</th>
+        <th scope="row" class="text-center">メモ</th>
         <td><%= f.text_area :item_memo, class: "form-control" %></td>
       </tr>
     </tbody>
