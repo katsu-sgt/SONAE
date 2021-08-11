@@ -15,9 +15,9 @@
   <table class="table p-3">
    <thead>
      <tr>
+       <th scope="col" class="col-5"></th>
+       <th scope="col" class="col-3"></th>
        <th scope="col" class="col-4"></th>
-       <th scope="col"></th>
-       <th scope="col"></th>
      </tr>
     </thead>
     <% @items.each do |item| %>
@@ -39,7 +39,7 @@
             <% end %>
           </div>
         </td>
-        
+
       </tr>
     </tbody>
     <% end %>
@@ -59,15 +59,15 @@
   <table class="table p-3">
    <thead>
      <tr>
-       <th scope="col"></th>
-       <th scope="col"></th>
+       <th scope="col" class="col-6"></th>
+       <th scope="col"class="col-8"></th>
      </tr>
     </thead>
     <% @shelters.each do |shelter| %>
     <tbody>
       <tr>
-        <td scope="row"><strong>名称</strong><br><%= shelter.shelter_name %></td>
-        <td><strong>住所</strong><br><%= shelter.address %></td>
+        <td scope="row"  class="text-break"><strong>名称</strong><br><%= shelter.shelter_name %></td>
+        <td class="text-break"><strong>住所</strong><br><%= shelter.address %></td>
       </tr>
       <tr>
         <td colspan="2" class="text-break">
