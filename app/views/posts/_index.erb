@@ -41,7 +41,7 @@
       <div class="col-md-4 d-flex">
         <div class="m-3">
           <%= link_to user_path(post.user) do %>
-            <%= attachment_image_tag(post.user, :image, size: '70x70', fallback: "avatar.jpg") %>
+            <%= attachment_image_tag(post.user, :image, size: '70x70', fallback: "avatar.jpg", class: "rounded-circle border  border-secondary") %>
           <% end %>
         </div>
         <div class="ml-3 p-3">
